@@ -1,0 +1,80 @@
+$blue: #37627C
+$green: #ABC272
+
+$total-columns  : 8             // a 12-column grid
+$column-width   : 5em            // each column is 4em wide
+$gutter-width   : 0.5em            // 1em gutters between columns
+$grid-padding   : $gutter-width  // grid-padding equal to gutters
+
+$columns: 12
+$breakpoint: 8
+
+*
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+
+h1, h2, h3
+  margin: 0
+  padding: 0
+  font-family: Zeroes
+
+dl
+  padding: 0.5em
+dt
+  float: left
+  clear: left
+  width: 100px
+  text-align: right
+  font-weight: bold
+  color: $green
+dt:after
+  content: ":"
+dd
+  margin: 0 0 0 110px
+  padding: 0 0 0.5em 0
+
+@import "compass"
+@import "susy"
+@import "_buttons"
+
+p
+  margin: 1px
+  padding: 1px
+a, a:visited
+  color: $blue
+blockquote
+  padding: 5px
+  color: gray
+  border-left: 4px gray solid
+
+$background: #E9E9E9
+$fade: #D0D0D0
+
+.page
+  @include container($total-columns, $columns)
+  background-color: $background
+  border: 1px solid black
+  padding: 20px
+  footer
+    @include span-columns(12, $columns)
+    clear: both
+    margin-top: 1em
+    border-top: 1px solid black
+
+.page
+  @include at-breakpoint(6)
+    padding: 0
+    header
+      @include span-columns(12, $columns)
+
+.content
+  margin: 0.5em
+#sidebar
+  padding: 5px
+  @include at-breakpoint(6)
+    @include span-columns(4, 12)
+
+body
+  background-color: black
+  background-size: cover
+  background-attachment: fixed
+  background-repeat: no-repeat
