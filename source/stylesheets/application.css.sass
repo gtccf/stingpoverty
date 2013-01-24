@@ -3,8 +3,8 @@ $blue: #37627C
 $green: #ABC272
 
 $total-columns  : 3             // a 12-column grid
-$column-width   : 20em            // each column is 4em wide
-$gutter-width   : 0.5em            // 1em gutters between columns
+$column-width   : 350px            // each column is 4em wide
+$gutter-width   : 5px            // 1em gutters between columns
 $grid-padding   : $gutter-width  // grid-padding equal to gutters
 
 $breakpoint: 3
@@ -61,10 +61,10 @@ $fade: #D0D0D0
     border-top: 0px solid black
 
 .page
+  header
+    @include span-columns($total-columns)
   @include at-breakpoint($breakpoint)
     padding: 0
-    header
-      @include span-columns($total-columns)
 
 .content
   margin: 0.5em
