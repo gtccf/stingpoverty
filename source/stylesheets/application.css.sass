@@ -1,13 +1,14 @@
+$gold: #F0B21B
 $blue: #37627C
 $green: #ABC272
 
-$total-columns  : 8             // a 12-column grid
-$column-width   : 5em            // each column is 4em wide
+$total-columns  : 3             // a 12-column grid
+$column-width   : 20em            // each column is 4em wide
 $gutter-width   : 0.5em            // 1em gutters between columns
 $grid-padding   : $gutter-width  // grid-padding equal to gutters
 
-$columns: 12
-$breakpoint: 8
+$breakpoint: 3
+$breakpoint-b: 2
 
 *
   font-family: "Trebuchet MS", Helvetica, sans-serif
@@ -50,31 +51,36 @@ $background: #E9E9E9
 $fade: #D0D0D0
 
 .page
-  @include container($total-columns, $columns)
+  @include container($total-columns)
   background-color: $background
   border: 1px solid black
   padding: 20px
   footer
-    @include span-columns(12, $columns)
+    @include span-columns($total-columns)
     clear: both
     margin-top: 1em
     border-top: 1px solid black
 
 .page
-  @include at-breakpoint(6)
+  @include at-breakpoint($breakpoint)
     padding: 0
     header
-      @include span-columns(12, $columns)
+      @include span-columns($total-columns)
 
 .content
   margin: 0.5em
 #sidebar
   padding: 5px
-  @include at-breakpoint(6)
-    @include span-columns(4, 12)
+  @include at-breakpoint($breakpoint-b)
+    @include span-columns(1)
+#navbar
+  padding: 5px
+  a
+    margin: 5px
+    @include button
 
 body
-  background-color: black
+  background-color: $gold
   background-size: cover
   background-attachment: fixed
   background-repeat: no-repeat
