@@ -75,7 +75,7 @@ end
 # Activate sync extension
 activate :sync do |sync|
   sync.fog_provider = 'AWS' # Your storage provider
-  sync.fog_directory = 'stingpoverty.org' # Your bucket name
+  sync.fog_directory = 'www.stingpoverty.org' # Your bucket name
   sync.fog_region = 'us-east-1' # The region your storage bucket is in (eg us-east-1, us-west-1, eu-west-1, ap-southeast-1 )
   sync.aws_secret_access_key = ENV['AWS_SECRET']
   sync.aws_access_key_id = ENV['AWS_ID']

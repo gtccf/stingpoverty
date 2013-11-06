@@ -1,8 +1,7 @@
-source :rubygems
+source "https://rubygems.org"
 
 gem "slim"
 gem "susy"
-gem "therubyracer", '~> 0.11.3'
 gem "rack-rewrite"
 gem "redcarpet"
 gem "middleman"
